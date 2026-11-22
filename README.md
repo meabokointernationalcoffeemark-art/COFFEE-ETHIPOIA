@@ -1,18 +1,21 @@
-# MEA-BOKO Coffee Ethiopia — Export Marketplace Starter
+# MEA-BOKO Ethio Coffee Marketplace
 
-A mobile-first React/Vite marketplace landing page for discovering Ethiopian coffee origins and starting buyer/supplier conversations.
+**Ethiopian coffee to the world — from farm to global market.**
 
-> **Starter only:** origin listings are illustrative. This is not a live trading or export platform. The supplier campaign is a proposed 0% commission message; campaign terms and eligibility must be defined and confirmed before launch.
+MEA-BOKO is a mobile-first React + Vite marketplace starter designed for Android browsers and desktop web. It brings Ethiopian green coffee, roasted coffee, domestic trade and international buyer/supplier inquiries into one interface.
 
-## Included
+## Marketplace modules
 
-- Responsive marketplace landing page and brand line: **ETHIOPIAN COFFEE TO THE WORLD — FROM FARM TO GLOBAL MARKET.**
-- Sample origin listings for Sidama, Guji, Yirgacheffe, Limu, and Harar.
-- Search across origins, regions, processing methods, and tasting notes; filter by origin.
-- Coffee inquiry form that prepares an email in the visitor's email application.
-- Email, WhatsApp, and Telegram contact links.
-- Supabase starter schema for profiles, origins, listings, inquiries, and shipment tracking.
-- Environment variable template.
+- Green coffee listings: washed, natural and other processing types
+- Roasted coffee and ground coffee product categories
+- Domestic and export market filters
+- Origins: Sidama, Guji, Yirgacheffe, Limu and Harar
+- Search by product, origin, process and tasting notes
+- Product detail dialog and inquiry-by-email action
+- Supplier / exporter registration inquiry form
+- Contact links for email, WhatsApp and Telegram
+- Responsive layout and installable PWA shell with basic offline fallback
+- Brand UI prepared for English, Afaan Oromo and Amharic expansion
 
 ## Run locally
 
@@ -23,47 +26,50 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. To test a production build:
+Build for production:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Publish to GitHub
+## Android installation
 
-1. Download and extract this project.
-2. Open your repository: https://github.com/meabokointernationalcoffeemark-art/COFFEE-ETHIPOIA
-3. Select **Add file → Upload files** and upload the extracted project files and folders (not the ZIP).
-4. Commit to the `main` branch with message: `Build MEA-BOKO coffee export marketplace starter.`
+1. Deploy the website over HTTPS.
+2. Open the website in Chrome on Android.
+3. Open the browser menu and choose **Install app** or **Add to Home screen**.
+4. Launch MEA-BOKO from the phone home screen.
 
-## Backend setup (next phase)
+This repository currently builds a responsive web app / installable PWA. It does not yet contain a native Android APK.
 
-1. Create a Supabase project.
-2. Review `supabase/schema.sql` and apply it in the Supabase SQL Editor.
-3. Configure and test Row Level Security policies for every table before exposing data. RLS is enabled and no policies are included, so client access is blocked until you deliberately add reviewed policies.
-4. Copy `.env.example` to `.env.local` and add the Supabase URL and anon key. The current landing page does not connect to Supabase; do not treat adding environment values as backend integration.
-5. Implement authentication, role-based permissions, listing management, secure inquiry submission, and notification workflows before enabling backend features.
+## Deploy
 
-## Important production work still required
+The project can be deployed to a static hosting service that supports Vite builds. Use:
 
-- Implement authentication and role-based permissions.
-- Verify supplier/exporter identities and listing documents.
-- Add admin moderation and audit logs.
-- Validate coffee specifications and traceability at lot level.
-- Integrate a payment provider only after legal, compliance, and settlement review.
-- Add secure inquiry APIs and notification workflows.
-- Review Ethiopia export requirements and destination-country requirements with qualified professionals.
-- Add multilingual UI (English and Amharic first; Afaan Oromo, Arabic, and Chinese later).
-- Define the supplier campaign's terms and eligibility—including duration, covered services, and any other fees—before communicating 0% commission as an active offer.
-- Build a Telegram Mini App using the same backend and authentication model.
+- Build command: `npm run build`
+- Output directory: `dist`
+- Node version: `20` or newer
 
-## Listing and inquiry limitations
+A GitHub Actions workflow runs the production build on pushes and pull requests to `main`.
 
-All displayed coffee listings and specifications are illustrative, not confirmed inventory or offers for sale. Confirm availability, price, grade, processing, and export readiness with MEA-BOKO. The inquiry form creates an email draft only: it does not save the inquiry to a database or send it automatically. No live inventory, price feed, payment processing, identity verification, export permit validation, customs integration, or shipment tracking is active.
+## Important: current starter limitations
+
+The product cards are illustrative sample listings, not verified inventory or offers for sale. Prices, available quantities, grades, crop years, certifications, minimum order quantities and export readiness must be confirmed with MEA-BOKO and the relevant supplier.
+
+The current forms prepare email drafts; they do not save registrations or inquiries to a database and do not send messages automatically. No live user accounts, role-based access, listing management, payment processing, escrow, identity verification, export-document validation, customs integration or shipment tracking is active.
+
+Before enabling live trade, implement and security-review:
+
+1. Supabase authentication and role-based access for buyers, suppliers, exporters and admins.
+2. Server-side listing and inquiry APIs with strict validation and Row Level Security policies.
+3. Supplier / exporter identity and business-document verification.
+4. Admin moderation, audit logs and product approval workflows.
+5. Lot-level traceability, sample requests, price / quantity negotiation and trade terms.
+6. Payment and shipping integrations only after legal, compliance and settlement review.
+7. Ethiopia export and destination-country compliance checks with qualified professionals.
 
 ## Brand contact
 
-- Email: [meaboko11@gmail.com](mailto:meaboko11@gmail.com)
-- WhatsApp: [+251 926 133 289](https://wa.me/251926133289)
-- Telegram: [@coffeemarketet](https://t.me/coffeemarketet)
+- Email: meaboko11@gmail.com
+- WhatsApp: +251 926 133 289 — https://wa.me/251926133289
+- Telegram: @coffeemarketet — https://t.me/coffeemarketet
